@@ -1,4 +1,4 @@
-import {allEmployement, addEmployement} from "../Models/query.js";
+import {allEmployement, addEmployement, createTable} from "../Models/query.js";
 
 
 export function getAllEmployements(req, res){
@@ -12,5 +12,11 @@ export function insertEmployement(req, res){
     addEmployement([name, lastname, salary])
     .then((data) => res.json(data))
     .catch((error) => console.log(error));
+}
+
+export function createTableEmployement(req, res) {
+    createTable()
+    .then((data) => res.json(data))
+    .catch();
 }
 
