@@ -4,11 +4,15 @@ import { getEmployementPDF } from '../Controllers/pdf.controller.js';
 
 export const router = new Router();
 
-router.get('/', getAllEmployements);
-router.post('/', insertEmployement);
+router.get('/', (req, res) => {
+    res.send("Hello World");
+})
+
+router.get('/e', getAllEmployements);
+router.post('/e', insertEmployement);
 
 //PDF
-router.get('/pdf', getEmployementPDF);
+router.get('/e/pdf', getEmployementPDF);
 
 //Create
-router.get('/create', createTableEmployement);
+router.get('/e/create', createTableEmployement);
